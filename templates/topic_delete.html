@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content%}
+<h1>Usuwanie posta: {{topic.title}}</h1>
+<form method="post">
+    <p> Czy jesteś pewien, że chcesz usunąć ten post?</p>
+    <button>Usuń</button>
+    <a href="/topic/{{topic.id}}">Anuluj</a>
+</form>
+{% endblock content %}
+</body>
+</html>

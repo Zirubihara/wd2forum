@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    <h1> {{ topic.title }}</h1>
+    Autor: {{ topic.author.username}}
+    {{ topic.text }}
+
+{% if user.id == topic.author.id %}
+<p>
+    <a href="/topic/{{topic.id}}/edit">Edytuj</a> ||
+    <a href="/topic/{{topic.id}}/delete">Usuń</a>
+</p>
+{% endif %}
+
+{% endblock content %}
+</body>
+</html>

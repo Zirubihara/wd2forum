@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Strona                                                          główna
+{% if user %}
+    <h1>Witaj {{user.username}}</h1>
+    <table>
+        <tr>
+            <th>Topic</th>
+            <th>Autor</th>
+            <th>Data</th>
+        </tr>
+
+        {% for topic in topics %}
+        <tr>
+            <td><a href="/topic/{{topic.id}}">{{ topic.title }}</a> </td>
+            <td> {{topic.author.username }}</td>
+            <td> {{topic.created }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+{% else %}
+    <h1> Witaj, zaloguj się!</h1>
+{% endif %}
+
+</body>
+</html>
