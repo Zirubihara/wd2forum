@@ -158,7 +158,7 @@ def topic_delete(topic_id):
 
 @app.route("/test")
 def test():
-    render_template("xd.html")
+    return render_template("xd.html")
 
 # index.php
 # index.jsp
