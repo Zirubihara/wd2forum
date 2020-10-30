@@ -156,6 +156,9 @@ def topic_delete(topic_id):
             db.commit()
             return redirect(url_for('index'))
 
+@app.route("/test")
+def test():
+    render_template("xd.html")
 
 # index.php
 # index.jsp
