@@ -46,7 +46,7 @@ def singup():
         db.commit()
 
         response = make_response(redirect(url_for('index')))
-        response.set_cookie("session_token", user.session_token, httponly=True)
+        response.set_cookie("session_token", user.session_token)
 
         return response
 
@@ -71,7 +71,7 @@ def login():
                 db.commit()
 
                 response = make_response(redirect(url_for('index')))
-                response.set_cookie("session_token", user.session_token, httponly=True)
+                response.set_cookie("session_token", user.session_token)
 
                 return response
             else:
